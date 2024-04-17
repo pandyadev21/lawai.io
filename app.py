@@ -9,7 +9,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 app = Flask(__name__)
 
 # Load the data
-df = pd.read_excel('C:\\Users\\devpa\Downloads\\PERSONAL PROJECT\\lawai\\laws.xlsx')
+df = pd.read_excel('\\lawai.io\\laws.xlsx')
 
 
 # Preprocess Data
