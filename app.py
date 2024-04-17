@@ -9,7 +9,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 app = Flask(__name__)
 
 # Load the data
-df = pd.read_excel('\\lawai.io\\laws.xlsx')
+df = pd.read_excel('\lawai.io\laws.xlsx')
 
 
 # Preprocess Data
@@ -25,7 +25,7 @@ df['processed_description'] = df['Description'].apply(preprocess_text)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('/index.html')
 
 @app.route('/result', methods=['POST'])
 def result():
@@ -47,7 +47,7 @@ def result():
     relevant_ipc_section = df.iloc[most_similar_index]['IPC Section']
     relevant_description = df.iloc[most_similar_index]['Description']
 
-    return render_template('result.html', ipc_section=relevant_ipc_section, description=relevant_description)
+    return render_template('/result.html', ipc_section=relevant_ipc_section, description=relevant_description)
 
 if __name__ == '__main__':
     app.run(debug=True)
