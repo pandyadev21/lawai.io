@@ -25,9 +25,9 @@ df['processed_description'] = df['Description'].apply(preprocess_text)
 
 @app.route('/')
 def index():
-    return render_template('/index.html')
+    return render_template('/lawai.io/index.html')
 
-@app.route('/result', methods=['POST'])
+@app.route('/lawai.io/result', methods=['POST'])
 def result():
     user_input = request.form['incident']
     processed_user_input = preprocess_text(user_input)
